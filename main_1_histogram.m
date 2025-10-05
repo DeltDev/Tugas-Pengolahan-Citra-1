@@ -51,7 +51,7 @@ function main_1_histogram()
         ylabel('Jumlah Piksel');
         figure;
         bar(binsB, countB, 'b');
-        title('Histogram Citra B/Biru (fungsi histogram dibuat sendiri)y');
+        title('Histogram Citra B/Biru (fungsi histogram dibuat sendiri)');
         xlabel('Intensitas (0-255)');
         ylabel('Jumlah Piksel');
     end
