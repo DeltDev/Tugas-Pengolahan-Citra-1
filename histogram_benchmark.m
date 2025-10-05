@@ -24,7 +24,7 @@ if size(img, 3) == 1
     [counts, bins] = imhist(img,256);
     figure;
     bar(bins, counts, 'k');
-    title('Histogram Citra Grayscale');
+    title('Histogram Citra Grayscale (menggunakan imhist)');
     xlabel('Intensitas (0-255)');
     ylabel('Jumlah Piksel');
 else
@@ -42,17 +42,17 @@ else
     % Tampilkan histogram RGB
     figure;
     bar(binsR, countR, 'r');
-    title('Histogram Citra R');
+    title('Histogram Citra R/Merah (menggunakan imhist)');
     xlabel('Intensitas (0-255)');
     ylabel('Jumlah Piksel');
     figure;
     bar(binsG, countG, 'g');
-    title('Histogram Citra G');
+    title('Histogram Citra G/Hijau (menggunakan imhist)');
     xlabel('Intensitas (0-255)');
     ylabel('Jumlah Piksel');
     figure;
     bar(binsB, countB, 'b');
-    title('Histogram Citra B');
+    title('Histogram Citra B/Biru (menggunakan imhist)');
     xlabel('Intensitas (0-255)');
     ylabel('Jumlah Piksel');
 end

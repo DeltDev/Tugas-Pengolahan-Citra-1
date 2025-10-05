@@ -20,7 +20,7 @@ function main_1_histogram()
         %tampilkan histogram citra grayscale
         figure;
         bar(bins, counts, 'k');
-        title('Histogram Citra Grayscale');
+        title('Histogram Citra Grayscale (fungsi histogram dibuat sendiri)');
         xlabel('Intensitas (0-255)');
         ylabel('Jumlah Piksel');
     else
@@ -41,17 +41,17 @@ function main_1_histogram()
         % Tampilkan histogram RGB
         figure;
         bar(binsR, countR, 'r');
-        title('Histogram Citra R');
+        title('Histogram Citra R/Merah (fungsi histogram dibuat sendiri)');
         xlabel('Intensitas (0-255)');
         ylabel('Jumlah Piksel');
         figure;
         bar(binsG, countG, 'g');
-        title('Histogram Citra G');
+        title('Histogram Citra G/Hijau (fungsi histogram dibuat sendiri)');
         xlabel('Intensitas (0-255)');
         ylabel('Jumlah Piksel');
         figure;
         bar(binsB, countB, 'b');
-        title('Histogram Citra B');
+        title('Histogram Citra B/Biru (fungsi histogram dibuat sendiri)y');
         xlabel('Intensitas (0-255)');
         ylabel('Jumlah Piksel');
     end
