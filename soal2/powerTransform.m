@@ -1,21 +1,15 @@
-function outputImg = powerTransform(inputImage, c, gamma)
-    img_normalized = im2double(inputImage);
+function outputImg = powerTransform(app,inputImg, c, gamma)
+
+    img = im2double(imread(inputImg));
+    hasil = c * (img .^ gamma);
+    outputImg = im2uint8(hasil);
     
-    % Transformasi pangkat: s = c * r^gamma
-    output_normalized = c * (img_normalized .^ gamma);
-    
-    % % Clipping ke range [0, 1]
-    % output_normalized = max(0, min(1, output_normalized));
-    
-    % Kembalikan ke range [0, 255]
-    outputImg = im2uint8(output_normalized);
-    
-    % fprintf('Transformasi Pangkat: s = %.2f * r^%.2f\n', c, gamma);
-    % if gamma < 1
-    %     fprintf('Gamma < 1: Brightening (expand dark regions)\n');
-    % elseif gamma > 1
-    %     fprintf('Gamma > 1: Darkening (compress dark regions)\n');
-    % else
-    %     fprintf('Gamma = 1: Linear (no change)\n');
-    
+    imwrite(uint8(outputImg), 'temp.png');
+    app.outputImage.ImageSource = 'temp.png';
+    plot(app.outputHist, imhist(uint8(outputImg)));
+
+    app.outputHist.Visible = 'on';
+    app.outputImage.Visible = 'on';
+    app.outputImageLabel.Visible = 'on';
+
 end

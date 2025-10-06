@@ -5,27 +5,21 @@ close all;
 
 try
     
-    citra_masukan = imread("D:\vrain\Tugas-Pengolahan-Citra-1\soal2\img\acdeimg\img7.jpg"); 
+    citra_masukan = imread("D:\vrain\Tugas-Pengolahan-Citra-1\soal2\img\acdeimg\img3.jpg"); 
 catch
     disp("Gagal memuat citra 'pout.tif'. Pastikan Image Processing Toolbox terinstal.");
     disp("Silakan ganti dengan path citra Anda, contoh: citra_masukan = imread('C:\gambar\uji.jpg');");
     return;
 end
 
-% a = 3;
-% b = 90; % Nilai positif mencerahkan, negatif menggelapkan
-% [citra_hasil1, citra_hasil2] = brighten(citra_masukan, a, b);
-% judul1 = sprintf('Brightening (s=r+%g)', b);
-% judul2 = sprintf('BRightening (s=%gr+%g)', a,b);
-% show_dummy(citra_masukan, citra_hasil1, judul1);
-% show_dummy(citra_masukan, citra_hasil2, judul2);
+a = 1;
+b = -10; % Nilai positif mencerahkan, negatif menggelapkan
+[citra_hasil1, citra_hasil2] = brightener(citra_masukan, a, b);
+judul1 = sprintf('Brightening (s=r+%g)', b);
+judul2 = sprintf('BRightening (s=%gr+%g)', a,b);
+show_dummy(citra_masukan, citra_hasil1, judul1);
+show_dummy(citra_masukan, citra_hasil2, judul2);
 
-% --- UJI COBA 2: IMAGE BRIGHTENING (s = ar + b) ---
-% a = 1.5; % a > 1 meningkatkan kontras
-% b = -50;
-% citra_hasil = fungsi_brightening(citra_masukan, a, b);
-% judul = sprintf('Brightening (s=%gr+%g)', a, b);
-% show_dummy(citra_masukan, citra_hasil, judul);
 
 
 % --- UJI COBA 3: CITRA NEGATIF & BALIKANNYA ---
@@ -49,14 +43,14 @@ end
 % show_dummy(citra_masukan, citra_hasil2, judul);
 
 % --- UJI COBA 5: TRANSFORMASI PANGKAT (GAMMA) ---
-c = 2;
-gamma = 0.8; % gamma < 1 mencerahkan detail gelap. Coba juga 1.5 untuk menggelapkan.
-citra_hasil = powerTransform(citra_masukan, c, gamma);
-judul = sprintf('Transformasi Pangkat (c=%g, gamma=%g)', c, gamma);
-show_dummy(citra_masukan, citra_hasil, judul);
+% c = 2;
+% gamma = 0.8; % gamma < 1 mencerahkan detail gelap. Coba juga 1.5 untuk menggelapkan.
+% citra_hasil = powerTransform(citra_masukan, c, gamma);
+% judul = sprintf('Transformasi Pangkat (c=%g, gamma=%g)', c, gamma);
+% show_dummy(citra_masukan, citra_hasil, judul);
 
 
-% --- UJI COBA 6: PEREGANGAN KONTRAS ---
-% citra_hasil = fungsi_peregangan_kontras(citra_masukan);
+%--- UJI COBA 6: PEREGANGAN KONTRAS ---
+% citra_hasil = contrastStrecth(citra_masukan);
 % judul = 'Peregangan Kontras Otomatis';
 % show_dummy(citra_masukan, citra_hasil, judul);
