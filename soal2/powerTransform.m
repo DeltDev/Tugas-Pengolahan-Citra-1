@@ -11,7 +11,11 @@ function outputImg = powerTransform(app,inputImg, c, gamma)
     app.outputImageLabel.Text = 'Hasil Transformasi Pangkat';
     app.plotFourHistograms(outputImg, 'outputHist');
 
-    % Sembunyikan set output kedua
-    app.outputImage2.Visible = 'off';
+    app.outputImage_2.Visible = 'off';
+    app.outputImageLabel_2.Visible = 'off';
+    app.outputHist_2G.Visible = 'off';
+    app.outputHist_2B.Visible = 'off';
+    app.outputHist_2R.Visible = 'off';
+    app.outputHist_2Gabungan.Visible = 'off';
 
 end

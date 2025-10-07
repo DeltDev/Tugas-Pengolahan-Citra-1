@@ -1,4 +1,4 @@
-function [matched_image, mapping_table] = hist_match(inputImg, refImg)
+function [matched_image, mapping_table] = hist_match(app, inputImg, refImg)
 %HIST_MATCH Melakukan Histogram Specification (Matching) pada sebuah citra.
 %   [matched_image, mapping_table] = hist_match(inputImg, refImg)
 %   menyesuaikan histogram dari 'inputImg' agar sesuai dengan histogram

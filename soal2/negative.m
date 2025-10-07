@@ -1,20 +1,32 @@
 function negative(app, inputImg)  
     % Konversi ke tipe double untuk perhitungan
-    inputImg = double(inputImg)*255 ;
-    [M, N, C] = size(inputImg);
+    inputImg = im2double(inputImg) ;
 
-    outputImg = zeros(M, N, C);
+    outputImg = 255- inputImg;
+    reverseOutputImg = 255-outputImg;
 
-    for i = 1:M
-        for j = 1:N
-            for k = 1:C
-                outputImg(i, j, k) = 255 - inputImg(i, j, k);
-            end
-        end
-    end
-
-    % Reverse output (negatif dari negatif)
-    reverseOutputImg = 255 - outputImg;
+    % [M, N, C] = size(inputImg);
+    % 
+    % outputImg = zeros(M, N, C);
+    % 
+    % for i = 1:M
+    %     for j = 1:N
+    %         for k = 1:C
+    %             outputImg(i, j, k) = 255 - inputImg(i, j, k);
+    %         end
+    %     end
+    % end
+    % 
+    % % Reverse output (negatif dari negatif)
+    % reverseOutputImg = zeros(M, N, C);
+    % 
+    % for i = 1:M
+    %     for j = 1:N
+    %         for k = 1:C
+    %             reverseOutputImg(i, j, k) = 255 - outputImg(i, j, k);
+    %         end
+    %     end
+    % end
 
         % --- Update UI Output 1 ---
     app.outputImage.ImageSource = outputImg;
