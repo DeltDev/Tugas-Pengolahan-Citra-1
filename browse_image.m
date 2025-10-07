@@ -10,5 +10,6 @@ function img = browse_image()
 
     % baca citra dan ubah jadi matriks
     img = imread(fullfile(path, file));
-
+    disp(class(img))
+    disp([min(img(:)), max(img(:))])
 end
