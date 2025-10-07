@@ -5,7 +5,7 @@ close all;
 
 try
     
-    citra_masukan = imread("D:\vrain\Tugas-Pengolahan-Citra-1\soal2\img\acdeimg\img3.jpg"); 
+    citra_masukan = imread("D:\vrain\Tugas-Pengolahan-Citra-1\soal2\img\img1.png"); 
 catch
     disp("Gagal memuat citra 'pout.tif'. Pastikan Image Processing Toolbox terinstal.");
     disp("Silakan ganti dengan path citra Anda, contoh: citra_masukan = imread('C:\gambar\uji.jpg');");
