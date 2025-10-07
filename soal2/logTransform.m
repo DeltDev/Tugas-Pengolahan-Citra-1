@@ -1,6 +1,6 @@
 function outputImg = logTransform (app,inputImg, c)
 
-    img= im2double(imread(inputImg)); 
+    img= double(inputImg); 
     hasil = c * log(1 + img);
     outputImg = im2uint8(hasil);
     
@@ -9,10 +9,8 @@ function outputImg = logTransform (app,inputImg, c)
 
     % Tampilkan gambar dan histogram
     app.outputImage.ImageSource = 'temp.png';
-    plot(app.outputHist, imhist(uint8(outputImg)));
-
-    % Tampilkan semua komponen
-    app.outputHist.Visible = 'on';
+    app.outputImageLabel.Text = 'Hasil Transformasi Log';
+    app.plotFourHistograms(outputImg, 'outputHist');
     app.outputImage.Visible = 'on';
     app.outputImageLabel.Visible = 'on';
     

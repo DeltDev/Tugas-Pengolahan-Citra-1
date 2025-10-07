@@ -1,6 +1,6 @@
 function outputImg = powerTransform(app,inputImg, c, gamma)
 
-    img = im2double(imread(inputImg));
+    img = double(inputImg);
     hasil = c * (img .^ gamma);
     outputImg = im2uint8(hasil);
     

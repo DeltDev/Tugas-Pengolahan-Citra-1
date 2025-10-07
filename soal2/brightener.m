@@ -1,59 +1,28 @@
-
-function  brightener(app, inputImg, a, b)
-
-    img = im2double(imread(inputImg));
-    b = b / 255.0;
+function brightener(app, inputImgData, a, b)
+    % Menghasilkan 2 output, jadi kita tampilkan di 2 set komponen output
     
-        % --- Proses tanpa dan dengan a ---
-    hasil = img + b;
-    hasilWithA = a * img + b;
-
-    % --- Clipping manual (mirip C) ---
-    hasil(hasil < 0) = 0;
-    hasil(hasil > 1) = 1;
-    hasilWithA(hasilWithA < 0) = 0;
-    hasilWithA(hasilWithA > 1) = 1;
-
-    % --- Kembali ke uint8 ---
-    outputImg = im2uint8(hasil);
-    outputImgWithA = im2uint8(hasilWithA);
+    img = im2double(inputImgData);
+    b_norm = b / 255.0;
     
-    imwrite(outputImg, 'temp.png');
-    imwrite(outputImgWithA, 'tempWithA.png');
+    % Hitung kedua hasil
+    outputB = img + b_norm;
+    outputAB = a * img + b_norm;
     
-
-
-
-    app.outputImage.ImageSource = 'temp.png';
-    histData = imhist(outputImg);
-    plot(app.outputHist, histData);
+    % Konversi kembali ke uint8 untuk ditampilkan
+    outputImg_B = im2uint8(outputB);
+    outputImg_AB = im2uint8(outputAB);
     
-    app.outputImage2.ImageSource = 'tempWithA.png';
-    histData2 = imhist(outputImgWithA);
-    plot(app.outputHist2, histData2);
-    
-    
-    app.outputHist.Visible = 'on';
+    % --- Update UI Output 1 ---
+    app.outputImage.ImageSource = outputImg_B;
     app.outputImage.Visible = 'on';
     app.outputImageLabel.Visible = 'on';
-    
-    app.outputHist2.Visible = 'on';
+    app.outputImageLabel.Text = 'Hasil (f + b)';
+    app.plotFourHistograms(outputImg_B, 'outputHist'); % Plot 4 histogram untuk hasil 1
+
+    % --- Update UI Output 2 ---
+    app.outputImage2.ImageSource = outputImg_AB;
     app.outputImage2.Visible = 'on';
     app.outputImageLabel2.Visible = 'on';
+    app.outputImageLabel2.Text = 'Hasil (a*f + b)';
+    app.plotFourHistograms(outputImg_AB, 'outputHist2'); % Plot 4 histogram untuk hasil 2
 end
-
-
-% function [outputImg, outputImgWithA] =  brightener( inputImg, a, b)
-% 
-% inputImg = im2double(inputImg);
-% b = b / 255.0;
-% fprintf('b :     %g',b);
-% 
-% hasil =  inputImg + b;
-% hasilWithA = a * inputImg + b;
-% 
-% outputImg = im2uint8(hasil);
-% outputImgWithA = im2uint8(hasilWithA);
-% 
-% 
-% end
