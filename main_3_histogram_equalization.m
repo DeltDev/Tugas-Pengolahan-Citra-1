@@ -21,7 +21,7 @@ function main_3_histogram_equalization()
         ylabel('Jumlah Piksel');
 
         % lakukan perataan histogram
-        eq_img = custom_histogram_equalization(img, counts);
+        eq_img = custom_histogram_equalization2(img, counts);
 
         % tampilkan citra hasil perataan
         figure;
@@ -59,9 +59,9 @@ function main_3_histogram_equalization()
         subplot(3,1,3); bar(bins, countB, 'b'); title('Histogram B Asli');
 
         % lakukan perataan histogram per channel
-        R_eq = custom_histogram_equalization(R, countR);
-        G_eq = custom_histogram_equalization(G, countG);
-        B_eq = custom_histogram_equalization(B, countB);
+        R_eq = custom_histogram_equalization2(R, countR);
+        G_eq = custom_histogram_equalization2(G, countG);
+        B_eq = custom_histogram_equalization2(B, countB);
 
         % gabungkan kembali
         eq_img = cat(3, uint8(R_eq), uint8(G_eq), uint8(B_eq));
