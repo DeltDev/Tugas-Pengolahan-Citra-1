@@ -20,9 +20,9 @@ function brightener(app, inputImgData, a, b)
     app.plotFourHistograms(outputImg_B, 'outputHist'); % Plot 4 histogram untuk hasil 1
 
     % --- Update UI Output 2 ---
-    app.outputImage2.ImageSource = outputImg_AB;
-    app.outputImage2.Visible = 'on';
-    app.outputImageLabel2.Visible = 'on';
-    app.outputImageLabel2.Text = 'Hasil (a*f + b)';
-    app.plotFourHistograms(outputImg_AB, 'outputHist2'); % Plot 4 histogram untuk hasil 2
+    app.outputImage_2.ImageSource = outputImg_AB;
+    app.outputImage_2.Visible = 'on';
+    app.outputImageLabel_2.Visible = 'on';
+    app.outputImageLabel_2.Text = 'Hasil (a*f + b)';
+    app.plotFourHistograms(outputImg_AB, 'outputHist_2'); % Plot 4 histogram untuk hasil 2
 end

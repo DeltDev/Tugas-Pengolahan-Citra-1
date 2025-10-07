@@ -25,7 +25,7 @@ function contrastStrecth(app, inputImg)
     app.plotFourHistograms(outputImg, 'outputHist');
 
     % Sembunyikan set output kedua jika tidak dipakai
-    app.outputImage2.Visible = 'off';
-    app.outputImageLabel2.Visible = 'off';
+    app.outputImage_2.Visible = 'off';
+    app.outputImageLabel_2.Visible = 'off';
     % Sembunyikan juga 4 axes histogram kedua
 end

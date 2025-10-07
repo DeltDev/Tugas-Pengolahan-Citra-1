@@ -24,11 +24,11 @@ function negative(app, inputImg)
     app.plotFourHistograms(outputImg, 'outputHist');
 
     % --- Update UI Output 2 ---
-    app.outputImage2.ImageSource = reverseOutputImg;
-    app.outputImage2.Visible = 'on';
-    app.outputImageLabel2.Visible = 'on';
-    app.outputImageLabel2.Text = 'Negatif dari Negatif (Asli)';
-    app.plotFourHistograms(reverseOutputImg, 'outputHist2');
+    app.outputImage_2.ImageSource = reverseOutputImg;
+    app.outputImage_2.Visible = 'on';
+    app.outputImageLabel_2.Visible = 'on';
+    app.outputImageLabel_2.Text = 'Negatif dari Negatif (Asli)';
+    app.plotFourHistograms(reverseOutputImg, 'outputHist_2');
     % 
     % % Simpan sementara
     % imwrite(uint8(outputImg), 'temp.png');
